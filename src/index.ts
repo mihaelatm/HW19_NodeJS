@@ -25,27 +25,42 @@
 
 // ///Task_3
 
-// type Compare<T> = (a: T, b: T) => boolean;
+type CompareStrings = (a: string, b: string) => boolean;
 
-// const areStringEqual: Compare<string> = (a, b) => a === b;
-// const areNumbersEqual: Compare<number> = (a, b) => a === b;
+const areStringsEqual: CompareStrings = (a, b) => {
+  return a === b;
+};
 
-// console.log(areStringEqual("Hello", "Hello"));
-// console.log(areNumbersEqual(3, 3));
+const result = areStringsEqual("hello", "hello");
+console.log(result);
 
-//Task_4
+// //Task_4
 
-function getLastElement<T>(array: T[]): T | undefined {
-  if (array.length === 0) {
-    return undefined;
-  }
-  return array[array.length - 1];
+// function getLastElement<T>(array: T[]): T | undefined {
+//   if (array.length === 0) {
+//     return undefined;
+//   }
+//   return array[array.length - 1];
+// }
+
+// const numbers = [5, 8, 3, 15, 6, 7];
+// const strings = ["laptop", "mouse", "keyboard", "monitor"];
+// const emptyArray: number[] = [];
+
+// console.log(getLastElement(numbers));
+// console.log(getLastElement(strings));
+// console.log(getLastElement(emptyArray));
+
+//Task_ 5
+
+function makeTriple<T>(a: T, b: T, c: T): T[] {
+  return [a, b, c];
 }
 
-const numbers = [5, 8, 3, 15, 6, 7];
-const strings = ["laptop", "mouse", "keyboard", "monitor"];
-const emptyArray: number[] = [];
+const numbers = makeTriple(1, 2, 3);
+const strings = makeTriple("laptop", "mouse", "keyboard");
+const booleans = makeTriple(true, false, true);
 
-console.log(getLastElement(numbers));
-console.log(getLastElement(strings));
-console.log(getLastElement(emptyArray));
+console.log(numbers);
+console.log(strings);
+console.log(booleans);
